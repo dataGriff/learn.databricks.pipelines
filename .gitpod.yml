@@ -11,7 +11,7 @@ tasks:
       sh ./cde/environment_variables.sh
   - name: Configure Databricks
     command: |
-      sh ./cde/configure_databricks.sh
+      sh ./cde/databricks_configure.sh
 
 vscode:
   extensions:

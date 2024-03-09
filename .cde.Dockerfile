@@ -2,8 +2,8 @@ FROM gitpod/workspace-python
 
 USER gitpod
 
-RUN pyenv install 3.12 \
-    && pyenv global 3.12
+RUN pyenv install 3.11 \
+    && pyenv global 3.11
 
 # Install Homebrew
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
