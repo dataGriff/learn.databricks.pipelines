@@ -1,0 +1,20 @@
+image:
+  file: .cde.Dockerfile
+
+tasks:
+  - init: pip3 install -r requirements.txt
+  - name: Versions
+    command: |
+      sh ./cde/environment_versions.sh
+  - name: Variables
+    command: |
+      sh ./cde/environment_variables.sh
+  - name: Configure Databricks
+    command: |
+      sh ./cde/configure_databricks.sh
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
+    - ms-python.python
+    - databricks.databricks
