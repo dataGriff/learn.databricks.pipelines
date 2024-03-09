@@ -12,6 +12,12 @@ tasks:
   - name: Configure Databricks
     command: |
       sh ./cde/databricks_configure.sh
+  - name: Example Spark Shell
+    command: |
+      sh ./cde/spark_run.sh
+  - name: Example Pyspark
+    command: |
+      python ./cde/pyspark.py
 
 vscode:
   extensions:
