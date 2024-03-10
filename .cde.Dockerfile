@@ -3,14 +3,14 @@ FROM gitpod/workspace-python-3.10
 # RUN pyenv install 3.10 \
 #     && pyenv global 3.10
 
-# USER gitpod
+USER gitpod
 
-# # Install Homebrew
-# RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
-#     echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+# Install Homebrew
+RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
 
-# RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && \
-#     brew update && \
+RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && \
+    brew update
 #     brew install azure-cli  && \
 #     brew tap databricks/tap && \
 #     brew install databricks && \
