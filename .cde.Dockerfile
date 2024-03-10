@@ -1,21 +1,16 @@
-FROM gitpod/workspace-python
+FROM gitpod/workspace-full
 
-USER gitpod
+# USER gitpod
 
-RUN pyenv install 3.11 \
-    && pyenv global 3.11 \
-    && pip install pyspark \
-    && pip install ipykernel 
+# RUN pyenv install 3.11 \
+#     && pyenv global 3.11 \
+#     && pip install pyspark \
+#     && pip install ipykernel 
 
-# Install Homebrew
-RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
-    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+# # Install Homebrew
+# RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
+#     echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
 
 # Update Homebrew, Install Terraform & Azure CLI
-RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && \
-    brew update && \
-    brew install azure-cli && \
-    brew tap databricks/tap && \
-    brew install databricks && \
-    brew install java && \
-    brew install apache-spark
+# RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && \
+#     brew update && \

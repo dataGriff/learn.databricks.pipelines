@@ -3,7 +3,6 @@ from pyspark.sql import SparkSession, DataFrame
 def get_taxis(spark: SparkSession) -> DataFrame:
   return spark.read.table("samples.nyctaxi.trips")
 
-
 # Create a new Databricks Connect session. If this fails,
 # check that you have configured Databricks Connect correctly.
 # See https://docs.databricks.com/dev-tools/databricks-connect.html.

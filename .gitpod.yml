@@ -2,6 +2,12 @@ image:
   file: .cde.Dockerfile
 
 tasks:
+  - name: Install Tools
+    init: |
+      sh ./cde/install_tools.sh
+  - name: Azure Login
+    command: |
+      sh ./cde/azure_login_sp.sh
   - name: Versions
     command: |
       sh ./cde/environment_versions.sh
@@ -22,3 +28,4 @@ vscode:
   extensions:
     - ms-python.python
     - databricks.databricks
+    - databricks.sqltools-databricks-driver
