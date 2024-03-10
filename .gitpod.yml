@@ -2,7 +2,6 @@ image:
   file: .cde.Dockerfile
 
 tasks:
-  - init: pip3 install -r requirements.txt
   - name: Versions
     command: |
       sh ./cde/environment_versions.sh
