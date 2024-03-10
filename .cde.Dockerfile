@@ -1,4 +1,4 @@
-FROM gitpod/workspace-python-3.12
+FROM gitpod/workspace-python-3.10
 
 USER gitpod
 
