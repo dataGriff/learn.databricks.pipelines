@@ -1,6 +1,4 @@
 {
   "host": "https://adb-5125860854676995.15.azuredatabricks.net/",
-  "authType": "azure-cli",
-  "clusterId": "0310-133623-tko9egef",
-  "workspacePath": "/Users/8bf76d78-eae9-4c9d-84ed-8aadaf5ebdc2/.ide/databricks.pipelines-782327d1"
+  "authType": "azure-cli"
 }

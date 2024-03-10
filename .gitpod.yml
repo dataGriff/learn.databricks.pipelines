@@ -33,7 +33,7 @@ tasks:
   - name: Template DAB Deploy
     command: |
       gp sync-await waitontools
-      python ./cde/databricks_deploy.sh
+      sh ./cde/databricks_deploy.sh
 
 vscode:
   extensions:
