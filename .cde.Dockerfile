@@ -8,7 +8,7 @@ RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/instal
 
 RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && \
     brew update && \
-    brew install azure-cli && \
+    brew install azure-cli  && \
     brew tap databricks/tap && \
     brew install databricks && \
     brew install java && \
