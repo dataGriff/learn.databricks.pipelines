@@ -1,6 +1,12 @@
-FROM gitpod/workspace-full
+FROM gitpod/workspace-python-3.12
 
-# USER gitpod
+USER gitpod
+
+RUN brew install azure-cli \
+    && brew tap databricks/tap \
+    && brew install databricks \
+    && brew install java \
+    && brew install apache-spark
 
 # RUN pyenv install 3.11 \
 #     && pyenv global 3.11 \

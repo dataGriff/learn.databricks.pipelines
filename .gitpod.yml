@@ -2,18 +2,15 @@ image:
   file: .cde.Dockerfile
 
 tasks:
-  - name: Install Tools
-    init: |
-      sh ./cde/install_tools.sh
-      gp sync-done waitontools
+  # - name: Install Tools
+  #   init: |
+  #     sh ./cde/install_tools.sh
+  #     gp sync-done waitontools
   - name: Azure Login
     command: |
-      gp sync-await waitontools
       sh ./cde/azure_login_sp.sh
-      gp sync-done azurelogin
   - name: Versions
     command: |
-      gp sync-await waitontools
       sh ./cde/environment_versions.sh
   - name: Variables
     command: |
@@ -22,17 +19,16 @@ tasks:
     command: |
       gp sync-await azurelogin
       sh ./cde/databricks_configure.sh
+      gp sync-done waitondatabricks
   - name: Example Spark Shell
     command: |
-      gp sync-await waitontools
       sh ./cde/spark_run.sh
-  - name: Example Pyspark
-    command: |
-      gp sync-await waitontools
-      python ./cde/main.py
+  # - name: Example Pyspark
+  #   command: |
+  #     python ./cde/main.py
   - name: Template DAB Deploy
     command: |
-      gp sync-await waitontools
+      gp sync-await waitondatabricks
       sh ./cde/databricks_deploy.sh
 
 vscode:
