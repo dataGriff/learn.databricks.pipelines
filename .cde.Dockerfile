@@ -4,7 +4,8 @@ USER gitpod
 
 RUN pyenv install 3.11 \
     && pyenv global 3.11 \
-    && pip install pyspark
+    && pip install pyspark \
+    && pip install ipykernel 
 
 # Install Homebrew
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \

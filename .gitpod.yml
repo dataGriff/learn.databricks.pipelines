@@ -16,10 +16,9 @@ tasks:
       sh ./cde/spark_run.sh
   - name: Example Pyspark
     command: |
-      python ./cde/pyspark.py
+      python ./cde/main.py
 
 vscode:
   extensions:
-    - dbaeumer.vscode-eslint
     - ms-python.python
     - databricks.databricks
