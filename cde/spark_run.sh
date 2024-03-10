@@ -1,1 +1,1 @@
-spark-shell
+spark-submit cde/main.py
