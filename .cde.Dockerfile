@@ -3,8 +3,8 @@ FROM gitpod/workspace-python-3.10
 USER gitpod
 
 # Install Homebrew
-# RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
-#    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
 
 RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && \
     brew update && \
