@@ -32,3 +32,9 @@ TODO:
 - Issues with databricks extension when using this.
 - This would remove the need to worry about PAT TOKENS in the above. However would still need removing as contains details specific to each user.
 
+## VS Code SQL
+
+- [VS Code databricks SQL](https://marketplace.visualstudio.com/items?itemName=databricks.sqltools-databricks-driver)
+
+- Need to setup this up when create workspace as doesn't seem to create config.
+- Doesn't seem to work for serverless clusters.
