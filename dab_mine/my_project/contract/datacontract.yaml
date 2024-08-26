@@ -1,0 +1,30 @@
+dataContractSpecification: 0.9.3
+id: whiskey
+info:
+  title: Whiskeys
+  version: 0.0.1
+  description: List of whiskies
+  links:
+    blog: hungovercoders.com
+servers:
+  production:
+    type: databricks
+    catalog: main
+    schema: whiskey
+models:
+  whiskeys:
+    description: List of whiskies
+    type: table
+    fields:
+      whiskey_name:
+        type: string
+        required: false
+        primary: false
+        unique: false
+        description: Name of the whiskey
+# quality:
+#   type: SodaCL
+#   specification:
+#     checks for covid_cases:
+#     - freshness(last_update::datetime) < 5000d
+#     - row_count > 1000

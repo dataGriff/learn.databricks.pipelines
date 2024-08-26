@@ -1,5 +1,9 @@
 # learn.databricks.pipelines
 
+## Important Notes
+
+- Jupiter notebooks seem far better to use
+
 ## vs code dev
 
 ### PAT Token Authentication
@@ -32,8 +36,14 @@ TODO:
 - Issues with databricks extension when using this.
 - This would remove the need to worry about PAT TOKENS in the above. However would still need removing as contains details specific to each user.
 
+### Installing Databricks Connect Makes VS Code Experience Better
+
+- [Docs](https://docs.databricks.com/en/dev-tools/vscode-ext/dev-tasks/databricks-connect.html)
+
+
 ## VS Code SQL
 
 - [VS Code databricks SQL](https://marketplace.visualstudio.com/items?itemName=databricks.sqltools-databricks-driver)
 
 - Configuration gets saved in .vscode/settings.
+- Only for SQL queries not SQL notebooks.

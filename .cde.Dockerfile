@@ -24,6 +24,12 @@ RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && \
 
 RUN  curl https://get.trunk.io -fsSL | bash -s -- -y
 
+RUN pip install databricks-connect
+
+RUN pip install datacontract-cli[databricks]
+
+RUN pip install deltalake
+
 #     brew install java && \
 #     brew install apache-spark
 # RUN pyenv install 3.11 \

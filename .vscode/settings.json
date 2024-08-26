@@ -9,10 +9,9 @@
             "catalog": "main",
             "previewLimit": 50,
             "driver": "Databricks",
-            "name": "griff",
+            "name": "main",
             "path": "/sql/1.0/warehouses/795c35de00767c9c",
-            "host": "adb-71195058626629.9.azuredatabricks.net",
-            "schema": "default"
+            "host": "adb-71195058626629.9.azuredatabricks.net"
         }
     ]
 }
