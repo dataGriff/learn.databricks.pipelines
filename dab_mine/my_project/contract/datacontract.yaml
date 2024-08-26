@@ -8,7 +8,7 @@ info:
     blog: hungovercoders.com
 servers:
   production:
-    type: databricks
+    type: databricks # this will default to context running in - see servers in data contract spec if want to be more remote 
     catalog: main
     schema: whiskey
 models:
@@ -26,7 +26,11 @@ models:
         pii: false
       country:
         type: string
-        enum: ["Ireland", "USA", "Scotland", "Wales"] ## doesn't work
+        enum: 
+          - Ireland
+          - USA
+          - Scotland 
+          - Wales ## doesn't work
         required: true
         primary: false
         unique: false
@@ -51,4 +55,4 @@ quality:
   specification:
     checks for whiskeys:
     ##- freshness(last_update::datetime) < 5000d
-    - row_count > 0
+    - row_count > 5

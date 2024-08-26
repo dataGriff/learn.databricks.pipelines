@@ -2,7 +2,11 @@
 
 ## Important Notes
 
-- Jupiter notebooks seem far better to use
+TODO: 
+
+- Jupiter notebooks seem far better to use... ARGH from VS code they commit outputs!
+- DoI need to use [this](https://gist.github.com/33eyes/431e3d432f73371509d176d0dfb95b6e)
+- or [pre commit hooks](https://stackoverflow.com/questions/60711665/how-to-prevent-git-from-commiting-jupyter-notebook-results)
 
 ## vs code dev
 
