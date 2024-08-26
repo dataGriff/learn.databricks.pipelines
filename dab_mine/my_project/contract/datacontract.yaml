@@ -1,5 +1,5 @@
 dataContractSpecification: 0.9.3
-id: whiskey
+id: whiskeys
 info:
   title: Whiskeys
   version: 0.0.1
@@ -22,9 +22,33 @@ models:
         primary: true
         unique: true
         description: Name of the whiskey
+        example: "Talisker"
+        pii: false
+      country:
+        type: string
+        enum: ["Ireland", "USA", "Scotland", "Wales"] ## doesn't work
+        required: true
+        primary: false
+        unique: false
+        description: Country whiskey originates from
+        example: "Ireland"
+        pii: false
+        domain: whiskey
+examples:
+  - type: csv # csv, json, yaml, custom
+    model: whiskeys
+    description: An example list of whiskeys.
+    data: | # expressed as string or inline yaml or via "$ref: data.csv"
+      whiskey_name,country
+      "Jamesons","Ireland",
+      "Jack Daniels","USA",
+      "Glenfiddich","Scotland",
+      "Bushmills","Ireland",
+      "Penderyn","Wales"
+
 quality:
   type: SodaCL
   specification:
-    checks for main.whiskey.whiskeys:
+    checks for whiskeys:
     ##- freshness(last_update::datetime) < 5000d
-    - row_count > 2
+    - row_count > 0

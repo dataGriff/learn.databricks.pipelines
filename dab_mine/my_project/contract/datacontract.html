@@ -1650,7 +1650,7 @@ sm:text-3xl sm:tracking-tight">
               Data Contract</h2>
             <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap 
 sm:space-x-6">
-              whiskey
+              whiskeys
             </div>
             <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap 
 sm:space-x-6">
@@ -1906,6 +1906,10 @@ sm:pl-6 w-2/12">
     
 
     
+    <div class="mt-1 italic">
+      Example: <span class="font-mono">Talisker</span>
+    </div>
+    
 
     <div>
       
@@ -1951,6 +1955,72 @@ mt-1">unique</span>
 
 
                       
+                        
+<tr>
+  <td class="whitespace-nowrap py-2 pl-4 pr-2 text-sm font-medium text-gray-900 
+sm:pl-6 w-2/12">
+
+    <div class="py-2 text-sm">
+      
+      <span class="font-mono flex">country</span>
+    </div>
+  </td>
+  <td class="whitespace-nowrap px-1 py-2 text-sm text-gray-500 w-1/12">
+    
+    string
+    
+  </td>
+  <td class="px-3 py-2 text-sm text-gray-500 w-7/12">
+    
+    <div class="text-gray-500">Country whiskey originates from</div>
+    
+
+    
+    <div class="mt-1 italic">
+      Example: <span class="font-mono">Ireland</span>
+    </div>
+    
+
+    <div>
+      
+      
+      <span class="inline-flex items-center rounded-md bg-gray-50 px-1 py-1 text-xs
+font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 mr-1 
+mt-1">required</span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <span class="inline-flex items-center rounded-md bg-gray-50 px-1 py-1 text-xs
+font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 mr-1 
+mt-1">domain:whiskey</span>
+      
+      
+    </div>
+  </td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+                      
                       </tbody>
                     </table>
                   </div>
@@ -1963,16 +2033,85 @@ mt-1">unique</span>
           
 
           
+          <section id="examples">
+            <div class="px-4 sm:px-0">
+              <h1 class="text-base font-semibold leading-6 
+text-gray-900">Examples</h1>
+              <p class="text-sm text-gray-500">Examples for models in the data 
+contract</p>
+            </div>
+            
+              <div class="mt-3 flow-root">
+  <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+      <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 
+sm:rounded-lg">
+
+        <table class="min-w-full divide-y divide-gray-300">
+          <thead class="bg-gray-50">
+          <tr>
+            <th scope="colgroup" colspan="3" class="py-2 pl-4 pr-3 text-left 
+font-semibold text-gray-900 sm:pl-6">
+              <span>whiskeys</span>
+              <span class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1
+text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">csv</span>
+              <div class="text-sm font-medium text-gray-500">An example list of 
+whiskeys.</div>
+            </th>
+          </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 bg-white">
+            <tr>
+              <td class="whitespace-nowrap py-2 pl-4 pr-2 text-sm font-medium 
+text-gray-900 sm:pl-6 w-12/12">
+                <pre>whiskey_name,country
+"Jamesons","Ireland",
+"Jack Daniels","USA",
+"Glenfiddich","Scotland",
+"Bushmills","Ireland",
+"Penderyn","Wales"
+</pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+            
+          </section>
+          
 
           
 
+          
+            <section id="quality">
+              <div class="px-4 sm:px-0">
+                <h1 class="text-base font-semibold leading-6 text-gray-900">
+                  Quality
+                </h1>
+                <p class="text-sm text-gray-500">
+                  <span>SodaCL</span>
+                </p>
+              </div>
+              <div class="mt-2 overflow-hidden shadow sm:rounded-lg bg-white">
+                <div class="px-4 py-5 sm:px-6">
+                  <div id="schema-specification" >
+                      <pre><code class="text-sm">checks for whiskeys:
+- row_count > 0
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
           
 
         </div>
       </div>
 
       <div class="mt-6 text-sm text-gray-400">
-        Created at 26 Aug 2024 14:23:44 UTC with <a 
+        Created at 26 Aug 2024 15:30:58 UTC with <a 
 href="https://cli.datacontract.com" class="text-gray-400 hover:text-gray-500">Data 
 Contract CLI</a> v0.10.11
       </div>
@@ -2009,7 +2148,7 @@ id="modal-title">Data Contract YAML</h3>
             </div>
             <pre class="overflow-x-auto text-sm bg-gray-50 
 p-4"><code>dataContractSpecification: 0.9.3
-id: whiskey
+id: whiskeys
 info:
   title: Whiskeys
   version: 0.0.1
@@ -2032,6 +2171,44 @@ models:
         primary: true
         unique: true
         description: Name of the whiskey
+        pii: false
+        example: Talisker
+      country:
+        type: string
+        required: true
+        primary: false
+        unique: false
+        description: Country whiskey originates from
+        pii: false
+        enum:
+        - Ireland
+        - USA
+        - Scotland
+        - Wales
+        example: Ireland
+        domain: whiskey
+examples:
+- type: csv
+  description: An example list of whiskeys.
+  model: whiskeys
+  data: 'whiskey_name,country
+
+    "Jamesons","Ireland",
+
+    "Jack Daniels","USA",
+
+    "Glenfiddich","Scotland",
+
+    "Bushmills","Ireland",
+
+    "Penderyn","Wales"
+
+    '
+quality:
+  type: SodaCL
+  specification:
+    checks for whiskeys:
+    - row_count > 0
 </code></pre>
           </div>
           <div class="mt-5 sm:mt-6">
