@@ -36,5 +36,4 @@ TODO:
 
 - [VS Code databricks SQL](https://marketplace.visualstudio.com/items?itemName=databricks.sqltools-databricks-driver)
 
-- Need to setup this up when create workspace as doesn't seem to create config.
-- Doesn't seem to work for serverless clusters.
+- Configuration gets saved in .vscode/settings.
