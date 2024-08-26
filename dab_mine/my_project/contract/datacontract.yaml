@@ -22,9 +22,9 @@ models:
         primary: true
         unique: true
         description: Name of the whiskey
-# quality:
-#   type: SodaCL
-#   specification:
-#     checks for covid_cases:
-#     - freshness(last_update::datetime) < 5000d
-#     - row_count > 1000
+quality:
+  type: SodaCL
+  specification:
+    checks for whiskey:
+    ##- freshness(last_update::datetime) < 5000d
+    - row_count > 2
