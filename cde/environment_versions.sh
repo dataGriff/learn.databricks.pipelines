@@ -1,3 +1,4 @@
+#!/bin/bash
 echo 'Getting git version...'
 git --version
 echo 'Getting terraform version...'
@@ -12,7 +13,7 @@ echo 'Getting databricks version...'
 databricks -v
 echo 'Getting python version...'
 python --version
-echo 'Getting spark version...'
-spark-submit --version
-echo 'Getting java version...'
-java -version
+# echo 'Getting spark version...'
+# spark-submit --version
+# echo 'Getting java version...'
+# java -version

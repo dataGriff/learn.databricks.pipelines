@@ -96,4 +96,5 @@ __pycache__/
 .metastore_db/
 derby.log
 
+# Databricks specific
 .databricks

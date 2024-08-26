@@ -1,3 +1,4 @@
+#!/bin/bash
 brew install azure-cli
 brew tap databricks/tap
 brew install databricks
