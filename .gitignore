@@ -97,4 +97,4 @@ __pycache__/
 derby.log
 
 # Databricks specific
-.databricks
+.databricks/*
