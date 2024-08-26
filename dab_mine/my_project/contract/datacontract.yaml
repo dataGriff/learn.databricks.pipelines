@@ -25,6 +25,6 @@ models:
 quality:
   type: SodaCL
   specification:
-    checks for whiskeys:
+    checks for main.whiskey.whiskeys:
     ##- freshness(last_update::datetime) < 5000d
     - row_count > 2
