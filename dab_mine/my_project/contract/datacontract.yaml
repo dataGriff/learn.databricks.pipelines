@@ -18,9 +18,9 @@ models:
     fields:
       whiskey_name:
         type: string
-        required: false
-        primary: false
-        unique: false
+        required: true
+        primary: true
+        unique: true
         description: Name of the whiskey
 # quality:
 #   type: SodaCL
