@@ -24,6 +24,7 @@ models:
         description: Name of the whiskey
         example: "Talisker"
         pii: false
+        domain: whiskey
       country:
         type: string
         enum: 
@@ -38,17 +39,27 @@ models:
         example: "Ireland"
         pii: false
         domain: whiskey
+      last_updated:
+        type: timestamp
+        required: true
+        primary: false
+        unique: false
+        description: When the whiskey was last updated
+        example: 2024-01-01 12:00:00
+        pii: false
+        domain: whiskey
+
 examples:
   - type: csv # csv, json, yaml, custom
     model: whiskeys
     description: An example list of whiskeys.
     data: | # expressed as string or inline yaml or via "$ref: data.csv"
-      whiskey_name,country
-      "Jamesons","Ireland",
-      "Jack Daniels","USA",
-      "Glenfiddich","Scotland",
-      "Bushmills","Ireland",
-      "Penderyn","Wales"
+      whiskey_name,country,last_updated
+      Jamesons,Ireland,2024-01-01 12:00:00
+      Jack Daniels,USA,2024-01-01 12:00:00
+      Glenfiddich,Scotland,2024-01-01 12:00:00
+      Bushmills,Ireland,2024-01-01 12:00:00
+      Penderyn,Wales,2024-01-01 12:00:00
 
 quality:
   type: SodaCL
@@ -56,3 +67,37 @@ quality:
     checks for whiskeys:
     ##- freshness(last_update::datetime) < 5000d
     - row_count > 5
+
+servicelevels:
+  # availability:
+  #   description: The server is available during support hours
+  #   percentage: 99.9%
+  # support:
+  #   description: The data is available during typical business hours at headquarters
+  #   time: 9am to 5pm in EST on business days
+  #   responseTime: 1h
+  # retention:
+  #   description: Data is retained for one year
+  #   period: P1Y
+  #   unlimited: false
+  latency:
+    description: Data is available within 25 hours after the order was placed
+    threshold: 1m
+    sourceTimestampField: whiskeys.last_updated
+    processedTimestampField: whiskeys.last_updated
+  freshness:
+    description: The most recent data in the whiskeys list.
+    threshold: 1m
+    timestampField: whiskeys.last_updated
+  # frequency:
+  #   description: Data is delivered once a day
+  #   type: batch
+  #   interval: daily
+  #   cron: 0 0 * * *
+
+  # backup:
+  #   description: Data is backed up once a week, every Sunday at 0:00 UTC.
+  #   interval: weekly
+  #   cron: 0 0 * * 0
+  #   recoveryTime: 24 hours
+  #   recoveryPoint: 1 week
