@@ -65,7 +65,7 @@ quality:
   type: SodaCL
   specification:
     checks for whiskeys:
-    - freshness(last_updated::timestamp) < 1m
+    - freshness(last_updated::timestamp) > 1m
     - row_count > 5
 
 servicelevels:
