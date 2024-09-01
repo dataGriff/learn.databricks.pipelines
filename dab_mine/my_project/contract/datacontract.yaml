@@ -45,7 +45,7 @@ models:
         primary: false
         unique: false
         description: When the whiskey was last updated
-        example: 2024-01-01 12:00:00
+        example: "2024-01-01 12:00:00"
         pii: false
         domain: whiskey
 
@@ -69,17 +69,17 @@ quality:
     - row_count > 5
 
 servicelevels:
-  # availability:
-  #   description: The server is available during support hours
-  #   percentage: 99.9%
-  # support:
-  #   description: The data is available during typical business hours at headquarters
-  #   time: 9am to 5pm in EST on business days
-  #   responseTime: 1h
-  # retention:
-  #   description: Data is retained for one year
-  #   period: P1Y
-  #   unlimited: false
+#   # availability:
+#   #   description: The server is available during support hours
+#   #   percentage: 99.9%
+#   # support:
+#   #   description: The data is available during typical business hours at headquarters
+#   #   time: 9am to 5pm in EST on business days
+#   #   responseTime: 1h
+#   # retention:
+#   #   description: Data is retained for one year
+#   #   period: P1Y
+#   #   unlimited: false
   latency:
     description: Data is available within 25 hours after the order was placed
     threshold: 1m
