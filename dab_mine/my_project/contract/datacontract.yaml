@@ -80,6 +80,7 @@ servicelevels:
 #   #   description: Data is retained for one year
 #   #   period: P1Y
 #   #   unlimited: false
+# TODO: service level agreements need to have tests duplicated in quality checks
   latency:
     description: Data is available within 25 hours after the order was placed
     threshold: 1m
