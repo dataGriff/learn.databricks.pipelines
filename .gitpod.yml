@@ -2,13 +2,13 @@ image:
   file: .cde.Dockerfile
 
 tasks:
-  # - name: Install Tools
-  #   before: |
-  #     sh ./cde/install_tools.sh
+  - name: Install Tools
+    init: |
+      pip3 install -r requirements.txt
   - name: Azure Login
     command: |
       sh ./cde/azure_login_sp.sh
-      gp sync-done azurelogin
+      gp sync-done azure_login
   - name: Versions
     command: |
       sh ./cde/environment_versions.sh
@@ -17,19 +17,9 @@ tasks:
       sh ./cde/environment_variables.sh
   - name: Configure Databricks
     command: |
-      gp sync-await azurelogin
+      gp sync-await azure_login
       sh ./cde/databricks_configure.sh
-      gp sync-done waitondatabricks
-  # - name: Example Spark Shell
-  #   command: |
-  #     sh ./cde/spark_run.sh
-  # - name: Example Pyspark
-  #   command: |
-  #     python ./cde/main.py
-  # - name: Template DAB Deploy
-  #   command: |
-  #     gp sync-await waitondatabricks
-  #     sh ./cde/databricks_deploy.sh
+      gp sync-done wait_on_databricks
 
 vscode:
   extensions:

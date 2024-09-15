@@ -13,6 +13,8 @@ echo 'Getting databricks version...'
 databricks -v
 echo 'Getting python version...'
 python --version
+echo 'Getting pulumi version...'
+pulumi version
 # echo 'Getting spark version...'
 # spark-submit --version
 # echo 'Getting java version...'

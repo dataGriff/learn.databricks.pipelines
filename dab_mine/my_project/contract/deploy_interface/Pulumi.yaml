@@ -1,0 +1,11 @@
+name: deploy_interface
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+description: azure databricks schema and table
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: https://www.pulumi.com/ai/api/project/fa3590c1-d5a6-4366-b6bc-14926ccfd9e3.zip

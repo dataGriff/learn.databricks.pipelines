@@ -1,0 +1,4 @@
+config:
+  databricks:host: https://adb-71195058626629.9.azuredatabricks.net
+  databricks:token:
+    secure: AAABACT6RCt38qku4WnZtSkG2O+ujK61hBt8gx/tk+KkxqhyTBeTGk1FGpZZqiBX+SfgUUZNDK1C/+IlrTZQZBUIxni8zA==

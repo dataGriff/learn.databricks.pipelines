@@ -25,10 +25,16 @@ if [ -z "$DATABRICKS_PAT" ]; then
 else
     echo "token = $DATABRICKS_PAT" >> ~/.databrickscfg
     echo "Unsetting ARM_CLIENT_ID, ARM_CLIENT_SECRET, ARM_TENANT_ID, AZURE_TENANT_ID as PAT present"
-    unset ARM_CLIENT_ID
-    unset ARM_CLIENT_SECRET
-    unset ARM_TENANT_ID
-    unset AZURE_TENANT_ID
+    ARM_CLIENT_ID=""
+    echo "ARM CLIENT ID is $ARM_CLIENT_ID"
+    ARM_CLIENT_SECRET=""
+    echo "ARM CLIENT SECRET is $ARM_CLIENT_SECRET"
+    ARM_TENANT_ID=""
+    echo "ARM CLIENT SECRET is $ARM_TENANT_ID"
+    AZURE_TENANT_ID=""
+    echo "ARM CLIENT SECRET is $AZURE_TENANT_ID"
+
+    echo 
 fi
 
 # Method 2: Client ID and Secret-based authentication
