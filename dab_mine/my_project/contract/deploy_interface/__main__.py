@@ -10,7 +10,7 @@ schema = databricks.Schema(
     name="distilleries",
     owner="xxxx@yahoo.co.uk", ##TODO: better to set as group
     catalog_name="whiskey",
-    metastore_id="d4d11f42-1c94-464b-bdde-268cbbaaf5eb",
+    metastore_id="xxx",
     storage_root="abfss://interface@prdwhiskeydlkeunhngc.dfs.core.windows.net/distilleries" ##TODO: worth noting schema needs rebuilding if change this
 )
 
